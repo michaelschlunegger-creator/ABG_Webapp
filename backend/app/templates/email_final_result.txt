@@ -1,0 +1,6 @@
+Subject: ABG Catalogued Result - {{request_id}}
+
+Your item has been catalogued.
+ABG Material Number: {{abg_material_code}}
+Short Description: {{short_description}}
+Long Description: {{long_description}}

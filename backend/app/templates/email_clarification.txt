@@ -1,0 +1,4 @@
+Subject: ABG Clarification Needed - {{request_id}}
+
+To continue cataloguing, please clarify:
+{{clarification_question}}
