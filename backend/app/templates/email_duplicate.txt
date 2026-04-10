@@ -1,0 +1,6 @@
+Subject: ABG Duplicate Confirmation - {{request_id}}
+
+The submitted item already exists.
+ABG Material Number: {{abg_material_code}}
+Short Description: {{short_description}}
+Long Description: {{long_description}}
