@@ -1,11 +1,21 @@
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
-const KEY = import.meta.env.VITE_INTERNAL_KEY || 'dev-internal-key'
+const BASE = 'https://abg-webapp-backend.onrender.com/api'
+const KEY = import.meta.env.VITE_INTERNAL_KEY || ''
 
 export async function api(path, opts = {}) {
+  const headers = {
+    'Content-Type': 'application/json',
+    ...(KEY ? { 'x-internal-key': KEY } : {}),
+    ...(opts.headers || {}),
+  }
+
   const res = await fetch(`${BASE}${path}`, {
     ...opts,
-    headers: { 'Content-Type': 'application/json', 'x-internal-key': KEY, ...(opts.headers || {}) }
+    headers,
   })
-  if (!res.ok) throw new Error(await res.text())
+
+  if (!res.ok) {
+    throw new Error(await res.text())
+  }
+
   return res.json()
 }
